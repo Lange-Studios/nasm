@@ -93,7 +93,7 @@ pub fn build(b: *std.Build) void {
         .HAVE_DECL_STRNLEN = 0,
         .HAVE_DECL_STRRCHRNUL = 0,
         .HAVE_DECL_STRSEP = 0,
-        .HAVE_ENDIAN_H = 1,
+        .HAVE_ENDIAN_H = have(target.result.os.tag != .windows),,
         .HAVE_FACCESSAT = 1,
         .HAVE_FCNTL_H = 1,
         .HAVE_FILENO = 1,
